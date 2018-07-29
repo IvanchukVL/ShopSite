@@ -1,0 +1,9 @@
+C:\Baza\ShopSite\DBShopSite\bin\Debug\netstandard2.0\DBShopSite.deps.json
+C:\Baza\ShopSite\DBShopSite\bin\Debug\netstandard2.0\DBShopSite.dll
+C:\Baza\ShopSite\DBShopSite\obj\Debug\netstandard2.0\DBShopSite.csproj.CoreCompileInputs.cache
+C:\Baza\ShopSite\DBShopSite\obj\Debug\netstandard2.0\DBShopSite.AssemblyInfoInputs.cache
+C:\Baza\ShopSite\DBShopSite\obj\Debug\netstandard2.0\DBShopSite.AssemblyInfo.cs
+C:\Baza\ShopSite\DBShopSite\bin\Debug\netstandard2.0\DBShopSite.pdb
+C:\Baza\ShopSite\DBShopSite\obj\Debug\netstandard2.0\DBShopSite.dll
+C:\Baza\ShopSite\DBShopSite\obj\Debug\netstandard2.0\DBShopSite.pdb
+C:\Baza\ShopSite\DBShopSite\obj\Debug\netstandard2.0\DBShopSite.csprojAssemblyReference.cache
