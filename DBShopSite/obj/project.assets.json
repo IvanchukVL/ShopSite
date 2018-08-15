@@ -69,19 +69,6 @@
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Relational.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational.Design/1.1.2": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.Relational": "1.1.2",
-          "NETStandard.Library": "1.6.1"
-        },
-        "compile": {
-          "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.dll": {}
-        }
-      },
       "Microsoft.EntityFrameworkCore.Tools/2.1.1": {
         "type": "package",
         "dependencies": {
@@ -287,25 +274,6 @@
         },
         "runtime": {
           "lib/netstandard2.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {}
-        }
-      },
-      "Npgsql.EntityFrameworkCore.PostgreSQL.Design/1.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "1.1.2",
-          "Microsoft.EntityFrameworkCore.Relational": "1.1.2",
-          "Microsoft.EntityFrameworkCore.Relational.Design": "1.1.2",
-          "Microsoft.Extensions.DependencyInjection": "1.1.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.1.0",
-          "NETStandard.Library": "1.6.1",
-          "Npgsql": "3.2.5",
-          "Npgsql.EntityFrameworkCore.PostgreSQL": "1.1.1"
-        },
-        "compile": {
-          "lib/netstandard1.3/Npgsql.EntityFrameworkCore.PostgreSQL.Design.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.3/Npgsql.EntityFrameworkCore.PostgreSQL.Design.dll": {}
         }
       },
       "Remotion.Linq/2.2.0": {
@@ -852,19 +820,6 @@
         "microsoft.entityframeworkcore.relational.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Relational.Design/1.1.2": {
-      "sha512": "pu2Jxndzv3slY6Ch9mdqVfL3AFhH5XzM02Rrnf9h5lKoViprYx1O+nNqT3BxmGrPkYadY9OddG2b9+sUO3Xuzw==",
-      "type": "package",
-      "path": "microsoft.entityframeworkcore.relational.design/1.1.2",
-      "files": [
-        "lib/net451/Microsoft.EntityFrameworkCore.Relational.Design.dll",
-        "lib/net451/Microsoft.EntityFrameworkCore.Relational.Design.xml",
-        "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.dll",
-        "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.xml",
-        "microsoft.entityframeworkcore.relational.design.1.1.2.nupkg.sha512",
-        "microsoft.entityframeworkcore.relational.design.nuspec"
-      ]
-    },
     "Microsoft.EntityFrameworkCore.Tools/2.1.1": {
       "sha512": "OYHhKbFNJCSHpkLAKI9yqTx3+SZ7aHKZaCP+G5ctlL/rZm5Y37Ke00abUhp5mFEJlvEueYfOGDx/GjltEs210A==",
       "type": "package",
@@ -1203,17 +1158,6 @@
         "lib/netstandard2.0/Npgsql.EntityFrameworkCore.PostgreSQL.pdb",
         "npgsql.entityframeworkcore.postgresql.2.1.1.1.nupkg.sha512",
         "npgsql.entityframeworkcore.postgresql.nuspec"
-      ]
-    },
-    "Npgsql.EntityFrameworkCore.PostgreSQL.Design/1.1.1": {
-      "sha512": "UXgRNtmOIc/gw3bvdof4hZu4rL9xIUGeSWklasd+Oj9SF7EH+OTu43/Qsz6YYrqX2sem2qxd004LwtW/CWpVHg==",
-      "type": "package",
-      "path": "npgsql.entityframeworkcore.postgresql.design/1.1.1",
-      "files": [
-        "lib/net451/Npgsql.EntityFrameworkCore.PostgreSQL.Design.dll",
-        "lib/netstandard1.3/Npgsql.EntityFrameworkCore.PostgreSQL.Design.dll",
-        "npgsql.entityframeworkcore.postgresql.design.1.1.1.nupkg.sha512",
-        "npgsql.entityframeworkcore.postgresql.design.nuspec"
       ]
     },
     "Remotion.Linq/2.2.0": {
@@ -2886,8 +2830,7 @@
     ".NETStandard,Version=v2.0": [
       "Microsoft.EntityFrameworkCore.Tools >= 2.1.1",
       "NETStandard.Library >= 2.0.3",
-      "Npgsql.EntityFrameworkCore.PostgreSQL >= 2.1.1.1",
-      "Npgsql.EntityFrameworkCore.PostgreSQL.Design >= 1.1.1"
+      "Npgsql.EntityFrameworkCore.PostgreSQL >= 2.1.1.1"
     ]
   },
   "packageFolders": {
@@ -2944,10 +2887,6 @@
           "Npgsql.EntityFrameworkCore.PostgreSQL": {
             "target": "Package",
             "version": "[2.1.1.1, )"
-          },
-          "Npgsql.EntityFrameworkCore.PostgreSQL.Design": {
-            "target": "Package",
-            "version": "[1.1.1, )"
           }
         },
         "imports": [

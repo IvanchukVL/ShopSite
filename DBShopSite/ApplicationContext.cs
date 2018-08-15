@@ -19,7 +19,7 @@ namespace DBShopSite
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql(Conn);
+            optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=Proba;Username=postgres;Password=1");
         }
     }
 }

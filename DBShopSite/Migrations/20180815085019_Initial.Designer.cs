@@ -9,8 +9,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DBShopSite.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20180729085335_Initial29")]
-    partial class Initial29
+    [Migration("20180815085019_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,6 +26,8 @@ namespace DBShopSite.Migrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("Age");
+
+                    b.Property<int>("Age2");
 
                     b.Property<string>("Name");
 
