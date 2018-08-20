@@ -7,10 +7,10 @@ namespace ShopSite
 {
     public class Util
     {
-        public static string BaseConnection
-        {
-            get { return "Host=localhost;Port=5432;Database=Proba;Username=postgres;Password=1"; }
-        }
+        //public static string BaseConnection
+        //{
+        //    //get { return services.AddDbContext<BloggingContext>(options => options.UseSqlServer(Configuration.GetConnectionString("BloggingDatabase"))); ; }
+        //}
 
     }
 }

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using DBShopSite;
+using DBShopSite.Entities;
+using DBShopSite.Context;
 
 namespace ShopSite.Controllers
 {
@@ -11,11 +12,12 @@ namespace ShopSite.Controllers
     {
         public IActionResult Main()
         {
+            var optionsBuilder = new Microsoft.EntityFrameworkCore.DbContextOptionsBuilder<DataContext>();
             ViewBag.Title1 = "Головна сторінка12345";
-            using (ApplicationContext db = new ApplicationContext())
+            using (DataContext db = new DataContext())
             {
-                User user1 = new User { Id = 1, Name = "Tom", Age = 33 };
-                User user2 = new User { Id = 2, Name = "Alice", Age = 26 };
+                User user1 = new User { Id = 5, Login = "Tom", Name="fff"};
+                User user2 = new User { Id = 6, Login = "Alice", Name = "fff" };
 
                 // добавляем их в бд
                 db.Users.Add(user1);
