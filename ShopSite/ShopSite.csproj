@@ -10,11 +10,14 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="2.1.1.1" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="DBShopSite">
-      <HintPath>..\DBShopSite\bin\Debug\netstandard2.0\DBShopSite.dll</HintPath>
-    </Reference>
+<ItemGroup>  
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet">  
+      <Version>2.0.0-*</Version>  
+    </DotNetCliToolReference>  
   </ItemGroup>
+<ItemGroup>
+  <ProjectReference Include="..\BLShopSite\BLShopSite.csproj" />
+  <ProjectReference Include="..\DBShopSite\DBShopSite.csproj" />
+</ItemGroup>
 
 </Project>

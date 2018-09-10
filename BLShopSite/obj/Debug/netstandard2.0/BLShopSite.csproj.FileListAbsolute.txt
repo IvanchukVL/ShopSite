@@ -1,0 +1,12 @@
+C:\Baza\ShopSite\BLShopSite\obj\Debug\netstandard2.0\BLShopSite.csproj.CoreCompileInputs.cache
+C:\Baza\ShopSite\BLShopSite\obj\Debug\netstandard2.0\BLShopSite.AssemblyInfoInputs.cache
+C:\Baza\ShopSite\BLShopSite\obj\Debug\netstandard2.0\BLShopSite.AssemblyInfo.cs
+C:\Baza\ShopSite\BLShopSite\bin\Debug\netstandard2.0\BLShopSite.deps.json
+C:\Baza\ShopSite\BLShopSite\bin\Debug\netstandard2.0\BLShopSite.dll
+C:\Baza\ShopSite\BLShopSite\bin\Debug\netstandard2.0\DBShopSite.dll
+C:\Baza\ShopSite\BLShopSite\bin\Debug\netstandard2.0\DBShopSite.pdb
+C:\Baza\ShopSite\BLShopSite\obj\Debug\netstandard2.0\BLShopSite.csproj.CopyComplete
+C:\Baza\ShopSite\BLShopSite\bin\Debug\netstandard2.0\BLShopSite.pdb
+C:\Baza\ShopSite\BLShopSite\obj\Debug\netstandard2.0\BLShopSite.dll
+C:\Baza\ShopSite\BLShopSite\obj\Debug\netstandard2.0\BLShopSite.pdb
+C:\Baza\ShopSite\BLShopSite\obj\Debug\netstandard2.0\BLShopSite.csprojAssemblyReference.cache

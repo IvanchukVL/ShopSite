@@ -34,3 +34,6 @@ C:\Baza\ShopSite\ShopSite\obj\Debug\netcoreapp2.1\Razor\Views\Pages\Main.g.cshtm
 C:\Baza\ShopSite\ShopSite\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_MasterPage.g.cshtml.cs
 C:\Baza\ShopSite\ShopSite\bin\Debug\netcoreapp2.1\DBShopSite.dll
 C:\Baza\ShopSite\ShopSite\bin\Debug\netcoreapp2.1\DBShopSite.pdb
+C:\Baza\ShopSite\ShopSite\bin\Debug\netcoreapp2.1\BLShopSite.dll
+C:\Baza\ShopSite\ShopSite\bin\Debug\netcoreapp2.1\BLShopSite.pdb
+C:\Baza\ShopSite\ShopSite\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Menu.g.cshtml.cs

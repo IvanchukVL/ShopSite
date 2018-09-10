@@ -8,23 +8,20 @@ namespace DBShopSite.Entities
 {
     public class Menu
     {
+        [Key]
         public int Id { get; set; }
-        [Required]
+        public int ParentId { get; set; }
+        [Required][StringLength(32)]
         public string Code { get; set; }
+        [StringLength(100)]
         public string Name { get; set; }
         public string Url { get; set; }
+        [StringLength(32)]
         public string Command { get; set; }
         public int Status { get; set; }
 
         [ForeignKey("MenuId")]
-        public List<MenuRole> MenuRoles { get; set; }
+        public List<RolesMenu> MenusRoles { get; set; }
     }
 
-    public class MenuRole
-    {
-        public int Id { get; set; }
-        public int MenuId { get; set; }
-        public int RoleId { get; set; }
-        public int Status { get; set; }
-    }
 }

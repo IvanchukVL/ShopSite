@@ -24,12 +24,13 @@
     ".NETCoreApp,Version=v2.1": {
       "ShopSite/1.0.0": {
         "dependencies": {
+          "BLShopSite": "1.0.0",
+          "DBShopSite": "1.0.0",
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.EntityFrameworkCore.Tools": "2.1.1",
           "Microsoft.NETCore.App": "2.1.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.1",
-          "Npgsql.EntityFrameworkCore.PostgreSQL": "2.1.1.1",
-          "DBShopSite": "1.0.0.0"
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "2.1.1.1"
         },
         "runtime": {
           "ShopSite.dll": {}
@@ -549,12 +550,25 @@
         }
       },
       "System.ValueTuple/4.5.0": {},
-      "DBShopSite/1.0.0.0": {
+      "BLShopSite/1.0.0": {
+        "dependencies": {
+          "DBShopSite": "1.0.0",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "2.1.1.1"
+        },
         "runtime": {
-          "DBShopSite.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "BLShopSite.dll": {}
+        },
+        "compile": {
+          "BLShopSite.dll": {}
+        }
+      },
+      "DBShopSite/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Tools": "2.1.1",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "2.1.1.1"
+        },
+        "runtime": {
+          "DBShopSite.dll": {}
         },
         "compile": {
           "DBShopSite.dll": {}
@@ -3699,8 +3713,13 @@
       "path": "system.valuetuple/4.5.0",
       "hashPath": "system.valuetuple.4.5.0.nupkg.sha512"
     },
-    "DBShopSite/1.0.0.0": {
-      "type": "reference",
+    "BLShopSite/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DBShopSite/1.0.0": {
+      "type": "project",
       "serviceable": false,
       "sha512": ""
     },

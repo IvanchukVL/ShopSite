@@ -1,0 +1,21 @@
+﻿@using DBShopSite.Entities
+@model  List<Menu>
+<h2>Main12</h2>
+@Model.Count().ToString()
+
+<div class="menu">
+    <ul>
+        @*@foreach (var mi in ((List<Menu>)ViewBag.Menu).Where(p => p.ParentId == 0))
+            {
+                <li>
+                    <a href="@Url.Action(mi.Command,"Pages")" title="">@mi.Name</a>
+                    <ul class="child">
+                        @foreach (var i in ((List<Menu>)ViewBag.Menu).Where(p => p.ParentId == mi.Id))
+                        {
+                            <li><a href="@Url.Action(i.Command,"Pages")">@i.Name</a></li>
+                        }
+                    </ul>
+                </li>
+            }*@
+    </ul>
+</div>

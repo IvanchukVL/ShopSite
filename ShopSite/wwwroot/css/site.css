@@ -1,37 +1,184 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
-for details on configuring this project to bundle and minify static web assets. */
-body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿* {
+    margin: 0;
+    padding: 0;
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+.tovars {
+    margin: 10px auto;
+    width: 990px;
+    height: 37px;
+    clear: left;
 }
 
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
-}
-
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
-    width: 100%;
-}
-
-/* QR code generator */
-#qrCode {
-    margin: 15px;
-}
-
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
+    .tovars ul {
+        background: transparent url(../images/topnavbg.jpg) repeat-x top center;
+        list-style: none;
+        overflow: hidden;
+        border-radius: 8px 8px 8px 8px;
+        -webkit-border-radius: 8px 8px 8px 8px;
+        -moz-border-radius: 8px 8px 8px 8px;
     }
+
+    .tovars li {
+        display: inline;
+        float: left;
+        width: 165px;
+    }
+    /*last menu item should not have a blue pipe*/
+    .tovars > ul > li:last-child {
+        border: 0;
+    }
+
+    .tovars li a {
+        margin: 0 auto;
+        padding: 0;
+        display: block;
+        border-left: 1px solid #1b6ea6;
+        color: #fff;
+        letter-spacing: 0.1em;
+        font: 400 12px/37px Arial, Helvetica, Verdana, sans-serif;
+        text-align: center;
+        text-decoration: none;
+        transition: background 0.5s ease;
+        -webkit-transition: background 0.5s ease;
+        -moz-transition: background 0.5s ease;
+    }
+
+        .tovars li a:hover {
+            background: #4a89bc url(../images/topnavbg2.jpg) repeat-x top left;
+        }
+    /*child*/
+    .tovars ul ul.child {
+        background: #000;
+        height: 0;
+        width: 0;
+        float: left;
+        /*visibility:hidden;*/
+        border-radius: 0px 0px 8px 8px;
+        -webkit-border-radius: 0px 0px 8px 8px;
+        -moz-border-radius: 0px 0px 8px 8px;
+        transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -webkit-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+    }
+
+        .tovars ul ul.child li {
+            float: left;
+            clear: both;
+        }
+
+            .tovars ul ul.child li a {
+                border: 0;
+            }
+    /*show hidden sub menu when parent li is hovered*/
+    .tovars ul li:hover ul.child {
+        background: #4681ad;
+        height: auto;
+        width: 165px;
+        visibility: visible;
+        display: block;
+        position: absolute;
+    }
+
+    .tovars ul:hover ul.child li a {
+        border: 0;
+    }
+
+    .tovars ul li:hover ul.child li a:hover {
+        background: #165d93;
+        -webkit-transition: background 0.5s ease;
+        -moz-transition: background 0.5s ease;
+        transition: background 0.5s ease;
+        border-radius: 8px 8px 8px 8px;
+        -webkit-border-radius: 8px 8px 8px 8px;
+        -moz-border-radius: 8px 8px 8px 8px;
+    }
+
+
+
+.menu {
+    margin: 10px auto;
+    width: 990px;
+    height: 37px;
+    clear: left;
+}
+
+    .menu li {
+        display: inline;
+        float: left;
+        margin-right: 15px;
+    }
+
+
+.logo {
+    margin: 10px auto;
+    width: 990px;
+    height: 100px;
+    border: 2px solid #C0C0C0;
+    clear: left;
+}
+
+.body {
+    margin: 10px auto;
+    width: 990px; /*height:500px;*/
+    clear: left;
+}
+
+    .body .filter {
+        border: 2px solid #C0C0C0;
+        margin: 10px 5px 10px 5px;
+        padding: 5px;
+        width: 20%;
+        min-height: 100px;
+        float: left;
+        border-radius: 5px 5px 5px 5px;
+        z-index: -10;
+    }
+
+    .body .inbody1 {
+        border: 2px solid #C0C0C0;
+        margin: 10px 5px 10px 5px;
+        padding: 5px;
+        width: 75%;
+        min-height: 100px;
+        float: left;
+        border-radius: 5px;
+        z-index: -10;
+    }
+
+    .body .inbody2 {
+        border: 2px solid #C0C0C0;
+        margin: 10px 5px 10px 5px;
+        padding: 5px;
+        width: 52%;
+        min-height: 100px;
+        float: left;
+        border-radius: 5px;
+        z-index: -10;
+    }
+
+    .body .advertising {
+        border: 2px solid #C0C0C0;
+        margin: 10px 5px 10px 5px;
+        padding: 5px;
+        width: 20%;
+        min-height: 100px;
+        float: left;
+        border-radius: 5px;
+        z-index: -10;
+    }
+
+
+.head {
+    margin: 10px auto;
+    width: 990px;
+    clear: left;
+}
+
+.footer {
+    margin: 10px auto;
+    width: 990px;
+    clear: left;
 }

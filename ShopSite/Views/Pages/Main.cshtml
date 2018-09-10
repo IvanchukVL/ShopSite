@@ -1,7 +1,16 @@
-﻿
-@{
-    ViewData["Title"] = "Main";
-}
+﻿@*@{
+        ViewData["Title"] = "Main111";
+    }*@
 
 <h2>Main</h2>
+
+@*<partial name="~/Views/Shared/Menu.cshtml" />*@
+
+@*@await Html.PartialAsync("~/Views/Shared/Menu.cshtml")*@
+
+@*@{ Html.RenderPartial("~/Views/Shared/Menu.cshtml");}*@
+
+@await Component.InvokeAsync("cMenu")
+
+<h2>Main2</h2>
 

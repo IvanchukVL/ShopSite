@@ -4639,6 +4639,34 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "BLShopSite/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "DBShopSite": "1.0.0",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "2.1.1.1"
+        },
+        "compile": {
+          "bin/placeholder/BLShopSite.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BLShopSite.dll": {}
+        }
+      },
+      "DBShopSite/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Tools": "2.1.1",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "2.1.1.1"
+        },
+        "compile": {
+          "bin/placeholder/DBShopSite.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DBShopSite.dll": {}
+        }
       }
     }
   },
@@ -12289,10 +12317,22 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "BLShopSite/1.0.0": {
+      "type": "project",
+      "path": "../BLShopSite/BLShopSite.csproj",
+      "msbuildProject": "../BLShopSite/BLShopSite.csproj"
+    },
+    "DBShopSite/1.0.0": {
+      "type": "project",
+      "path": "../DBShopSite/DBShopSite.csproj",
+      "msbuildProject": "../DBShopSite/DBShopSite.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
+      "BLShopSite >= 1.0.0",
+      "DBShopSite >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.EntityFrameworkCore.Tools >= 2.1.1",
       "Microsoft.NETCore.App >= 2.1.0",
@@ -12329,7 +12369,14 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Baza\\ShopSite\\BLShopSite\\BLShopSite.csproj": {
+              "projectPath": "C:\\Baza\\ShopSite\\BLShopSite\\BLShopSite.csproj"
+            },
+            "C:\\Baza\\ShopSite\\DBShopSite\\DBShopSite.csproj": {
+              "projectPath": "C:\\Baza\\ShopSite\\DBShopSite\\DBShopSite.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

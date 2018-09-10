@@ -27,8 +27,6 @@ namespace ShopSite
         public void ConfigureServices(IServiceCollection services)
         {
 
-            //var connection = @"Host=localhost;Port=5432;Database=Proba;Username=postgres;Password=1";
-            //services.AddDbContext<DBShopSite.ApplicationContext>(options => options.UseNpgsql(connection));
 
             services.Configure<CookiePolicyOptions>(options =>
             {
@@ -40,7 +38,8 @@ namespace ShopSite
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddDbContext<DataContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DataContext")));
+           //var connection = Configuration["ConnectionStrings:DataContext"];
+           //services.AddDbContext<DataContext>(options => options.UseNpgsql(Configuration["ConnectionStrings:DataContext"]));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
