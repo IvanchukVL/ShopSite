@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopSite", "ShopSite\ShopSi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBShopSite", "DBShopSite\DBShopSite.csproj", "{137DD961-2D91-4869-BEFB-E7CB9C61AA21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLShopSite", "BLShopSite\BLShopSite.csproj", "{D5B4D1F3-9489-4AF7-B207-6973814F08F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BLShopSite", "BLShopSite\BLShopSite.csproj", "{D5B4D1F3-9489-4AF7-B207-6973814F08F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

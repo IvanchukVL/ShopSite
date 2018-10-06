@@ -53,7 +53,9 @@ namespace DBShopSite.Migrations
                         new { Id = 6, Code = "SpiningRods", Command = "SpiningRods", Name = "Спінінгові удилища", ParentId = 2, Status = 1 },
                         new { Id = 7, Code = "FeederReels", Command = "FeederReels", Name = "Фідерні катушки", ParentId = 3, Status = 1 },
                         new { Id = 8, Code = "FloadReels", Command = "FloadReels", Name = "Поплавочні катушки", ParentId = 3, Status = 1 },
-                        new { Id = 9, Code = "SpiningReels", Command = "SpiningReels", Name = "Спінінгові катушки", ParentId = 3, Status = 1 }
+                        new { Id = 9, Code = "SpiningReels", Command = "SpiningReels", Name = "Спінінгові катушки", ParentId = 3, Status = 1 },
+                        new { Id = 10, Code = "FeederReelsBT", Command = "FeederReelsBT", Name = "З бертранером", ParentId = 7, Status = 1 },
+                        new { Id = 11, Code = "FeederReelsWBT", Command = "FeederReelsWBT", Name = "Без бертранером", ParentId = 7, Status = 1 }
                     );
                 });
 
@@ -105,7 +107,11 @@ namespace DBShopSite.Migrations
                         new { Id = 4, MenuId = 4, RoleId = 1, Status = 1 },
                         new { Id = 5, MenuId = 5, RoleId = 1, Status = 1 },
                         new { Id = 6, MenuId = 6, RoleId = 1, Status = 1 },
-                        new { Id = 7, MenuId = 7, RoleId = 1, Status = 1 }
+                        new { Id = 7, MenuId = 7, RoleId = 1, Status = 1 },
+                        new { Id = 8, MenuId = 8, RoleId = 1, Status = 1 },
+                        new { Id = 9, MenuId = 9, RoleId = 1, Status = 1 },
+                        new { Id = 10, MenuId = 10, RoleId = 1, Status = 1 },
+                        new { Id = 11, MenuId = 11, RoleId = 1, Status = 1 }
                     );
                 });
 

@@ -19,5 +19,10 @@
   <ProjectReference Include="..\BLShopSite\BLShopSite.csproj" />
   <ProjectReference Include="..\DBShopSite\DBShopSite.csproj" />
 </ItemGroup>
+<ItemGroup>
+  <Content Update="Views\Shared\_Layout.cshtml">
+    <Pack>$(IncludeRazorContentInPack)</Pack>
+  </Content>
+</ItemGroup>
 
 </Project>

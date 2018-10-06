@@ -1,0 +1,13 @@
+C:\Baza\ShopSite\UnitTestShopSite\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Baza\ShopSite\UnitTestShopSite\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Baza\ShopSite\UnitTestShopSite\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Baza\ShopSite\UnitTestShopSite\bin\Debug\UnitTestShopSite.dll
+C:\Baza\ShopSite\UnitTestShopSite\bin\Debug\UnitTestShopSite.pdb
+C:\Baza\ShopSite\UnitTestShopSite\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Baza\ShopSite\UnitTestShopSite\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Baza\ShopSite\UnitTestShopSite\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Baza\ShopSite\UnitTestShopSite\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Baza\ShopSite\UnitTestShopSite\obj\Debug\UnitTestShopSite.csproj.CoreCompileInputs.cache
+C:\Baza\ShopSite\UnitTestShopSite\obj\Debug\UnitTestShopSite.csproj.CopyComplete
+C:\Baza\ShopSite\UnitTestShopSite\obj\Debug\UnitTestShopSite.dll
+C:\Baza\ShopSite\UnitTestShopSite\obj\Debug\UnitTestShopSite.pdb

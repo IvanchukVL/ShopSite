@@ -10,10 +10,10 @@ namespace ShopSite.Components
 {
     public class cMenu: ViewComponent
     {
-        List<Menu> _Menu;
+        List<vMenu> _Menu;
         public cMenu()
         {
-            _Menu = MenuMethod.GetMenuItems(1);
+            _Menu = MenuMethod.GetMenuItems(1,0);
         }
         public IViewComponentResult Invoke(int maxPrice)
         {
@@ -21,4 +21,20 @@ namespace ShopSite.Components
         }
 
     }
+
+    public class cMenuItems : ViewComponent
+    {
+        List<vMenu> _MenuItems;
+        public cMenuItems()
+        {
+        }
+        public IViewComponentResult Invoke(int? ParentId)
+        {
+            _MenuItems = MenuMethod.GetMenuItems(1, ParentId);
+            return View("~/Views/Shared/MenuItems.cshtml", _MenuItems);
+        }
+
+    }
+
+
 }

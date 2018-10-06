@@ -1,0 +1,7 @@
+C:\Baza\ShopSite\.vs\ShopSite\lut\0\b\ShopSite.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Baza\ShopSite\.vs\ShopSite\lut\0\b\ShopSite.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Baza\ShopSite\.vs\ShopSite\lut\0\b\ShopSite.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Baza\ShopSite\.vs\ShopSite\lut\0\b\ShopSite.Tests\bin\Debug\ShopSite.Tests.dll
+C:\Baza\ShopSite\.vs\ShopSite\lut\0\i\ShopSite.Tests\Debug\ShopSite.Tests.csproj.CoreCompileInputs.cache
+C:\Baza\ShopSite\.vs\ShopSite\lut\0\i\ShopSite.Tests\Debug\ShopSite.Tests.csproj.CopyComplete
+C:\Baza\ShopSite\.vs\ShopSite\lut\0\i\ShopSite.Tests\Debug\ShopSite.Tests.dll

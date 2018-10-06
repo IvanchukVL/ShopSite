@@ -1,21 +1,32 @@
-﻿@using DBShopSite.Entities
-@model  List<Menu>
+﻿@using BLShopSite
+@model List<vMenu>
 <h2>Main12</h2>
 @Model.Count().ToString()
+@{
+    string Drop = "";
+}
 
-<div class="menu">
-    <ul>
-        @*@foreach (var mi in ((List<Menu>)ViewBag.Menu).Where(p => p.ParentId == 0))
+
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            @foreach (var mi in Model.Where(p => p.ParentId == 0))
             {
-                <li>
-                    <a href="@Url.Action(mi.Command,"Pages")" title="">@mi.Name</a>
-                    <ul class="child">
-                        @foreach (var i in ((List<Menu>)ViewBag.Menu).Where(p => p.ParentId == mi.Id))
-                        {
-                            <li><a href="@Url.Action(i.Command,"Pages")">@i.Name</a></li>
-                        }
-                    </ul>
-                </li>
-            }*@
-    </ul>
-</div>
+                Drop = mi.IsSubMenu == true ? "dropdown" : "";
+
+            <li class="dropdown">
+                <a href="@Url.Action(mi.Command, "Pages")" data-toggle="@Drop" title="">
+                    @mi.Name
+                    @if (mi.IsSubMenu)
+                    {
+                        <span class="caret"></span>
+                    }
+                </a>
+                @await Component.InvokeAsync("cMenuItems", mi.Id)
+
+            </li>
+            }
+        </ul>
+    </div>
+</nav>
+

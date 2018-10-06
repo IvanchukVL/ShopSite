@@ -1,0 +1,8 @@
+C:\Baza\ShopSite\.vs\ShopSite\lut\0\b\DBShopSite\Debug\netstandard2.0\DBShopSite.deps.json
+C:\Baza\ShopSite\.vs\ShopSite\lut\0\b\DBShopSite\Debug\netstandard2.0\DBShopSite.dll
+C:\Baza\ShopSite\.vs\ShopSite\lut\0\i\DBShopSite\Debug\netstandard2.0\DBShopSite.csprojAssemblyReference.cache
+C:\Baza\ShopSite\.vs\ShopSite\lut\0\i\DBShopSite\Debug\netstandard2.0\DBShopSite.csproj.CoreCompileInputs.cache
+C:\Baza\ShopSite\.vs\ShopSite\lut\0\i\DBShopSite\Debug\netstandard2.0\DBShopSite.AssemblyInfoInputs.cache
+C:\Baza\ShopSite\.vs\ShopSite\lut\0\i\DBShopSite\Debug\netstandard2.0\DBShopSite.AssemblyInfo.cs
+C:\Baza\ShopSite\.vs\ShopSite\lut\0\i\DBShopSite\Debug\netstandard2.0\DBShopSite.csproj.CopyComplete
+C:\Baza\ShopSite\.vs\ShopSite\lut\0\i\DBShopSite\Debug\netstandard2.0\DBShopSite.dll

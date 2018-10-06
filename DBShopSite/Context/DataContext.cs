@@ -59,6 +59,8 @@ namespace DBShopSite.Context
             modelBuilder.Entity<Menu>().HasData(new Menu { Id = 7, ParentId = 3, Code = "FeederReels", Name = "Фідерні катушки", Command = "FeederReels", Status = 1 });
             modelBuilder.Entity<Menu>().HasData(new Menu { Id = 8, ParentId = 3, Code = "FloadReels", Name = "Поплавочні катушки", Command = "FloadReels", Status = 1 });
             modelBuilder.Entity<Menu>().HasData(new Menu { Id = 9, ParentId = 3, Code = "SpiningReels", Name = "Спінінгові катушки", Command = "SpiningReels", Status = 1 });
+            modelBuilder.Entity<Menu>().HasData(new Menu { Id = 10, ParentId = 7, Code = "FeederReelsBT", Name = "З бертранером", Command = "FeederReelsBT", Status = 1 });
+            modelBuilder.Entity<Menu>().HasData(new Menu { Id = 11, ParentId = 7, Code = "FeederReelsWBT", Name = "Без бертранером", Command = "FeederReelsWBT", Status = 1 });
 
             modelBuilder.Entity<RolesMenu>().HasData(new RolesMenu { Id = 1, MenuId=1, RoleId=1, Status=1 });
             modelBuilder.Entity<RolesMenu>().HasData(new RolesMenu { Id = 2, MenuId = 2, RoleId = 1, Status = 1 });
@@ -67,6 +69,10 @@ namespace DBShopSite.Context
             modelBuilder.Entity<RolesMenu>().HasData(new RolesMenu { Id = 5, MenuId = 5, RoleId = 1, Status = 1 });
             modelBuilder.Entity<RolesMenu>().HasData(new RolesMenu { Id = 6, MenuId = 6, RoleId = 1, Status = 1 });
             modelBuilder.Entity<RolesMenu>().HasData(new RolesMenu { Id = 7, MenuId = 7, RoleId = 1, Status = 1 });
+            modelBuilder.Entity<RolesMenu>().HasData(new RolesMenu { Id = 8, MenuId = 8, RoleId = 1, Status = 1 });
+            modelBuilder.Entity<RolesMenu>().HasData(new RolesMenu { Id = 9, MenuId = 9, RoleId = 1, Status = 1 });
+            modelBuilder.Entity<RolesMenu>().HasData(new RolesMenu { Id = 10, MenuId = 10, RoleId = 1, Status = 1 });
+            modelBuilder.Entity<RolesMenu>().HasData(new RolesMenu { Id = 11, MenuId = 11, RoleId = 1, Status = 1 });
 
             modelBuilder.Entity<UsersRoles>().HasData(new UsersRoles { Id=1, UserId=1, RoleId=1, Status=1});
 
