@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BLShopSite
 {
-    public class MenuMethod
+    public class MenuMethods
     {
         public static List<vMenu> GetMenuItems(int? UserId, int? ParentId)
         {

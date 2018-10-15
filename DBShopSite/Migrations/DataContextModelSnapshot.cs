@@ -19,6 +19,48 @@ namespace DBShopSite.Migrations
                 .HasAnnotation("ProductVersion", "2.1.1-rtm-30846")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
+            modelBuilder.Entity("DBShopSite.Entities.Filter", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasMaxLength(70);
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(150);
+
+                    b.Property<int>("Status");
+
+                    b.Property<int>("TypeFilter");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Filters");
+                });
+
+            modelBuilder.Entity("DBShopSite.Entities.FilterItems", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Code");
+
+                    b.Property<int>("FilterId");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(150);
+
+                    b.Property<int>("Status");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FilterId");
+
+                    b.ToTable("FilterItems");
+                });
+
             modelBuilder.Entity("DBShopSite.Entities.Menu", b =>
                 {
                     b.Property<int>("Id")
@@ -37,6 +79,8 @@ namespace DBShopSite.Migrations
                     b.Property<int>("ParentId");
 
                     b.Property<int>("Status");
+
+                    b.Property<int?>("TovarGroupId");
 
                     b.Property<string>("Url");
 
@@ -115,6 +159,58 @@ namespace DBShopSite.Migrations
                     );
                 });
 
+            modelBuilder.Entity("DBShopSite.Entities.Tovar", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("GroupId");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(150);
+
+                    b.Property<int>("Status");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tovars");
+                });
+
+            modelBuilder.Entity("DBShopSite.Entities.TovarGroup", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("FilterId");
+
+                    b.Property<string>("NameGroup")
+                        .IsRequired()
+                        .HasMaxLength(150);
+
+                    b.Property<int>("Status");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TovarGroups");
+                });
+
+            modelBuilder.Entity("DBShopSite.Entities.TovarGroupFilter", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("FilterId");
+
+                    b.Property<int>("Status");
+
+                    b.Property<int>("TovarGroupId");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TovarGroupFilters");
+                });
+
             modelBuilder.Entity("DBShopSite.Entities.User", b =>
                 {
                     b.Property<int>("Id")
@@ -167,6 +263,14 @@ namespace DBShopSite.Migrations
                     b.HasData(
                         new { Id = 1, RoleId = 1, Status = 1, UserId = 1 }
                     );
+                });
+
+            modelBuilder.Entity("DBShopSite.Entities.FilterItems", b =>
+                {
+                    b.HasOne("DBShopSite.Entities.Filter")
+                        .WithMany("FilterItems")
+                        .HasForeignKey("FilterId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("DBShopSite.Entities.RolesMenu", b =>

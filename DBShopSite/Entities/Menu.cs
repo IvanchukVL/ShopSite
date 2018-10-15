@@ -18,8 +18,8 @@ namespace DBShopSite.Entities
         public string Url { get; set; }
         [StringLength(32)]
         public string Command { get; set; }
+        public int? TovarGroupId { get; set; }
         public int Status { get; set; }
-
         [ForeignKey("MenuId")]
         public List<RolesMenu> MenusRoles { get; set; }
     }

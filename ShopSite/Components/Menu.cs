@@ -13,11 +13,11 @@ namespace ShopSite.Components
         List<vMenu> _Menu;
         public cMenu()
         {
-            _Menu = MenuMethod.GetMenuItems(1,0);
+            _Menu = MenuMethods.GetMenuItems(1,0);
         }
         public IViewComponentResult Invoke(int maxPrice)
         {
-            return View("~/Views/Shared/Menu.cshtml",_Menu);
+            return View("~/Views/Menu/Menu.cshtml",_Menu);
         }
 
     }
@@ -30,8 +30,8 @@ namespace ShopSite.Components
         }
         public IViewComponentResult Invoke(int? ParentId)
         {
-            _MenuItems = MenuMethod.GetMenuItems(1, ParentId);
-            return View("~/Views/Shared/MenuItems.cshtml", _MenuItems);
+            _MenuItems = MenuMethods.GetMenuItems(1, ParentId);
+            return View("~/Views/Menu/MenuItems.cshtml", _MenuItems);
         }
 
     }

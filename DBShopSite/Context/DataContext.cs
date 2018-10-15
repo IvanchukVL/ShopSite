@@ -12,6 +12,12 @@ namespace DBShopSite.Context
         public DbSet<RolesMenu> RolesMenu { get; set; }
         public DbSet<Roles> Roles { get; set; }
         public DbSet<UsersRoles> UsersRoles { get; set; }
+        public DbSet<TovarGroup> TovarGroups { get; set; }
+        public DbSet<Tovar> Tovars { get; set; }
+        public DbSet<Filter> Filters { get; set; }
+        public DbSet<TovarGroupFilter> TovarGroupFilters { get; set; }
+        public DbSet<FilterItems> FilterItems { get; set; }
+
         //[DefaultValue("Host=localhost;Port=5432;Database=ShopSite;Username=postgres;Password=1")]
         public string Conn { get; set; }
 
