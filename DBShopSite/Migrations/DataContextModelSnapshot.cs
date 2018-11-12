@@ -71,7 +71,10 @@ namespace DBShopSite.Migrations
                         .HasMaxLength(32);
 
                     b.Property<string>("Command")
-                        .HasMaxLength(32);
+                        .HasMaxLength(50);
+
+                    b.Property<string>("Controll")
+                        .HasMaxLength(50);
 
                     b.Property<string>("Name")
                         .HasMaxLength(100);

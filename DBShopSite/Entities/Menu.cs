@@ -16,7 +16,9 @@ namespace DBShopSite.Entities
         [StringLength(100)]
         public string Name { get; set; }
         public string Url { get; set; }
-        [StringLength(32)]
+        [StringLength(50)]
+        public string Controll { get; set; }
+        [StringLength(50)]
         public string Command { get; set; }
         public int? TovarGroupId { get; set; }
         public int Status { get; set; }

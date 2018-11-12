@@ -16,10 +16,5 @@ namespace ShopSite.Controllers
         {
             return View();
         }
-        public IActionResult Proba(int? Id)
-        {
-            ViewBag.Id = Id;
-            return View();
-        }
     }
 }

@@ -11,7 +11,7 @@
         Drop = mi.IsSubMenu == true ? "dropdown" : "";
         ItemClass = mi.IsSubMenu == true ? "dropdown-toggle" : "";
     <li>
-        <a href="@Url.Action(mi.Command,"Pages", new { Id=mi.Id})" class="@ItemClass" data-toggle="@Drop">
+        <a href="@Url.Action(mi.Command,mi.Controll, new { Id=mi.Id, TovarGroupId = mi.TovarGroupId})" class="@ItemClass" data-toggle="@Drop">
             @mi.Name
                 @if (mi.IsSubMenu)
                 {

@@ -25,7 +25,9 @@ namespace BLShopSite
                                  Status =m.Status,
                                  Url =m.Url,
                                  Code =m.Code,
+                                 Controll = m.Controll,
                                  Command =m.Command,
+                                 TovarGroupId = m.TovarGroupId,
                                  IsSubMenu = (from mi in db.Menu
                                               where mi.ParentId == m.Id
                                               select 1).Any()

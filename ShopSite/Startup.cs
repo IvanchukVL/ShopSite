@@ -62,8 +62,11 @@ namespace ShopSite
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Pages}/{action=Main}/{id?}");
+                    name: "default1",
+                    template: "{controller}/{action}/{id?}/{TovarGroupId?}");
+                routes.MapRoute(
+                  name: "default",
+                  template: "{controller=Pages}/{action=Main}");
             });
 
 

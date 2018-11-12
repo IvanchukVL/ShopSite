@@ -32,6 +32,9 @@
   <Content Update="Views\Tovars\Filter\CheckList.cshtml">
     <Pack>$(IncludeRazorContentInPack)</Pack>
   </Content>
+  <Content Update="Views\Tovars\Tovars.cshtml">
+    <Pack>$(IncludeRazorContentInPack)</Pack>
+  </Content>
 </ItemGroup>
 
 </Project>
