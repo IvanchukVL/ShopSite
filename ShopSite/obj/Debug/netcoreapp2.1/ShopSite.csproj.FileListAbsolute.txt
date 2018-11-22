@@ -39,7 +39,9 @@ C:\Baza\ShopSite\ShopSite\bin\Debug\netcoreapp2.1\BLShopSite.pdb
 C:\Baza\ShopSite\ShopSite\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout1.g.cshtml.cs
 C:\Baza\ShopSite\ShopSite\obj\Debug\netcoreapp2.1\Razor\Views\Menu\Menu.g.cshtml.cs
 C:\Baza\ShopSite\ShopSite\obj\Debug\netcoreapp2.1\Razor\Views\Menu\MenuItems.g.cshtml.cs
-C:\Baza\ShopSite\ShopSite\obj\Debug\netcoreapp2.1\Razor\Views\Tovars\Filter\CheckList.g.cshtml.cs
 C:\Baza\ShopSite\ShopSite\obj\Debug\netcoreapp2.1\Razor\Views\Tovars\Filter\Filters.g.cshtml.cs
-C:\Baza\ShopSite\ShopSite\obj\Debug\netcoreapp2.1\Razor\Views\Tovars\Tovars.g.cshtml.cs
 C:\Baza\ShopSite\ShopSite\obj\Debug\netcoreapp2.1\Razor\Views\Pages\Tovars_DELETE.g.cshtml.cs
+C:\Baza\ShopSite\ShopSite\obj\Debug\netcoreapp2.1\Razor\Views\Tovars\Filter\FilterCheckList.g.cshtml.cs
+C:\Baza\ShopSite\ShopSite\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutTovar.g.cshtml.cs
+C:\Baza\ShopSite\ShopSite\obj\Debug\netcoreapp2.1\Razor\Views\Tovars\Filter\FilterRangePrice.g.cshtml.cs
+C:\Baza\ShopSite\ShopSite\obj\Debug\netcoreapp2.1\Razor\Views\Tovars\ListTovar.g.cshtml.cs

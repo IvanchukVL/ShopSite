@@ -29,10 +29,10 @@
   <Content Update="Views\Shared\_Layout.cshtml">
     <Pack>$(IncludeRazorContentInPack)</Pack>
   </Content>
-  <Content Update="Views\Tovars\Filter\CheckList.cshtml">
+  <Content Update="Views\Tovars\Filter\FilterCheckList.cshtml">
     <Pack>$(IncludeRazorContentInPack)</Pack>
   </Content>
-  <Content Update="Views\Tovars\Tovars.cshtml">
+  <Content Update="Views\Tovars\ListTovar.cshtml">
     <Pack>$(IncludeRazorContentInPack)</Pack>
   </Content>
 </ItemGroup>

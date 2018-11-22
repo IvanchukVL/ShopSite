@@ -19,6 +19,25 @@ namespace DBShopSite.Migrations
                 .HasAnnotation("ProductVersion", "2.1.1-rtm-30846")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
+            modelBuilder.Entity("DBShopSite.Entities.Atribute", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasMaxLength(70);
+
+                    b.Property<int>("DataType");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(150);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Atributes");
+                });
+
             modelBuilder.Entity("DBShopSite.Entities.Filter", b =>
                 {
                     b.Property<int>("Id")
@@ -33,7 +52,9 @@ namespace DBShopSite.Migrations
 
                     b.Property<int>("Status");
 
-                    b.Property<int>("TypeFilter");
+                    b.Property<string>("TypeFilter")
+                        .IsRequired()
+                        .HasMaxLength(150);
 
                     b.HasKey("Id");
 
@@ -59,6 +80,25 @@ namespace DBShopSite.Migrations
                     b.HasIndex("FilterId");
 
                     b.ToTable("FilterItems");
+                });
+
+            modelBuilder.Entity("DBShopSite.Entities.FiltersAtribute", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("AtributeId");
+
+                    b.Property<int>("FilterId");
+
+                    b.Property<int>("Status")
+                        .HasMaxLength(150);
+
+                    b.Property<string>("Value");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FiltersAtributes");
                 });
 
             modelBuilder.Entity("DBShopSite.Entities.Menu", b =>

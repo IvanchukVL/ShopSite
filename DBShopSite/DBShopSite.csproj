@@ -8,6 +8,7 @@
     <Compile Remove="Migrations\20180820063208_part5.cs" />
     <Compile Remove="Migrations\20180824063330_part9.cs" />
     <Compile Remove="Migrations\20180824063513_part9.cs" />
+    <Compile Remove="Migrations\20181119074716_Part18.cs" />
   </ItemGroup>
 
   <ItemGroup>

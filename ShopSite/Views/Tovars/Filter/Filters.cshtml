@@ -1,2 +1,39 @@
 ﻿
-@ViewBag.Id.ToString() + "фільтр"
+@using DBShopSite.Entities
+@model List<Filter>
+<form id="form1">
+    @foreach (var fi in Model)
+    {
+        <br />
+        @await Component.InvokeAsync("cFilterItem", new { FilterId = fi.Id, FilterName = fi.Name, FilterType = fi.TypeFilter })
+        <br />
+    }
+    <input type="button" onclick="GetZap()" value="Застосувати" />
+    <script>
+        function GetZap() {
+            console.log("крок0");
+
+            var payload = {
+                StartDate: "1/19/2016",
+                EndDate: "4/19/2016",
+                ProductType: "New",
+                Count: 1
+            };
+            //var payload = $('form').serialize();
+            $.ajax({
+                type: 'POST',
+                url: '/Tovars/MessageHandler',
+                contentType: "application/json; charset=utf-8",
+                dataType: 'json',
+                data: JSON.stringify({name:"проба"}),  
+                //data: $("#form1").serialize(),  
+                success: function (data) {
+                    alert(data);
+                },
+                error: function () {
+                    alert("Сталась помилка!");
+                }
+            });
+        }
+    </script>
+</form>

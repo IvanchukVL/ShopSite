@@ -8,12 +8,13 @@ using BLShopSite;
 
 namespace ShopSite.Components
 {
-    public class cCreateFilterItem : ViewComponent
+    public class cFilterItem : ViewComponent
     {
-        public IViewComponentResult Invoke(int? FilterId)
+        public IViewComponentResult Invoke(int? FilterId, string FilterName, string FilterType)
         {
             List<FilterItems> _FilterItems = TovarMethods.GetFilterItems(null, FilterId);
-            return View("~/Views/Filter/FilterItems.cshtml", _FilterItems);
+            ViewBag.FilterName = FilterName;
+            return View($"~/Views/Tovars/Filter/{FilterType}.cshtml", _FilterItems);
         }
 
     }

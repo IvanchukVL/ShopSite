@@ -1,0 +1,13 @@
+﻿
+@using DBShopSite.Entities
+@model List<FilterItems>
+<fieldset>
+    <legend>@ViewBag.FilterName</legend>
+    @foreach (var fi in Model)
+    {
+        <div>
+            <input type="checkbox" id=@fi.Id name="interest[]" value=@fi.Code>
+            <label for=@fi.Code>@fi.Name</label>
+        </div>
+    }
+</fieldset>

@@ -5,24 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - ShopSite</title>
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/slider.css" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-theme.css" />
     <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/js/bootstrap-slider.js"></script>
+    <script src="~/js/site.js"></script>
+
+
     <script src="~/js/site.js" asp-append-version="true"></script>
 </head>
 <body>
-        @await Component.InvokeAsync("cMenu")
-
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2018 - ShopSite</p>
-        </footer>
+    @await Component.InvokeAsync("cMenu")
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-9">
+                @RenderBody()
+            </div>
+            <div class="col-lg-3">
+                Реклама
+            </div>
+        </div>
     </div>
-
-
-    @*@RenderSection("Scripts", required: false)*@
 </body>
 </html>

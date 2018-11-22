@@ -1,0 +1,14 @@
+﻿@{
+    Layout = "_Layout";
+}
+@using DBShopSite.Entities
+
+    <div class="row">
+        <div class="col-md-3 border border-top-1 border-right-1 border-bottom-1">
+            @{await Html.RenderPartialAsync(@"~/Views/Tovars/Filter/Filters.cshtml", (List<Filter>)ViewBag.ListFilter);}
+        </div>
+        <div class="col-md-9">
+            РЛОРЛОРЛОРЛОРЛОРЛОРЛ111
+            @ViewBag.Id.ToString()
+        </div>
+    </div>
