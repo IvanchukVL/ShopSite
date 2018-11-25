@@ -1,12 +1,41 @@
-﻿@*<div data-role="rangeslider">
-        <label for="number">@ViewBag.FilterName</label>
-        <input type="range" name="number" id="number" value="200" min="0" max="1000">
-        <input type="range" name="number" id="number" value="200" min="0" max="1000">
-    </div>*@
+﻿@using DBShopSite.Views
+@{
+    string Id = $"fi_RnPrItem_{ViewBag.FilterId}";
+    decimal MinValue = 0, MaxValue = 0;
+    string Unit = "";
+    try
+    {
+        MinValue = Convert.ToDecimal(((List<vFiltersAtribute>)ViewBag.FilterAtributes).First(x => x.Code == "MinValue").Value);
+        MaxValue = Convert.ToDecimal(((List<vFiltersAtribute>)ViewBag.FilterAtributes).First(x => x.Code == "MaxValue").Value);
+        Unit = ((List<vFiltersAtribute>)ViewBag.FilterAtributes).First(x => x.Code == "Unit").Value.ToString();
+    }
+    catch (Exception err)
+    {
 
+    }
 
-<b>€ 10</b> <input id="ex2" type="text" class="span2" value="" data-slider-min="10" data-slider-max="1000" data-slider-step="5" data-slider-value="[250,450]" /> <b>€ 1000</b>
+}
+
+<b>@ViewBag.FilterName</b>
+<br />
+
+<br />
+<b>@string.Format("{0}{1}", MinValue.ToString(), Unit)</b>
+<br />
+<input id=@Id type="text" class="FilterItem" value="" data-slider-min=@MinValue.ToString() data-slider-max=@MaxValue.ToString() data-slider-step="5" data-slider-value=@string.Format("[{0},{1}]",MinValue.ToString(),MaxValue.ToString()) />
+<br />
+<b>@string.Format("{0}{1}", MaxValue.ToString(), Unit)</b>
+<br />
+@*<input type="button" width="100" onclick="GetValue()" />
 
 <script>
-    $("#ex2").slider();
+    function GetValue() {
+        console.log("проба");
+        alert($("@string.Format("#{0}",Id)").val());
+    }
+</script>*@
+
+
+<script>
+    $(@Id).slider();
 </script>

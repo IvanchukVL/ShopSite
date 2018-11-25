@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using DBShopSite.Context;
+using BLShopSite;
 
 namespace ShopSite
 {
@@ -37,9 +38,9 @@ namespace ShopSite
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
-           //var connection = Configuration["ConnectionStrings:DataContext"];
-           //services.AddDbContext<DataContext>(options => options.UseNpgsql(Configuration["ConnectionStrings:DataContext"]));
+            //services.AddTransient<TovarMethods.ITovarService, TovarMethods.TovarService>();
+            //var connection = Configuration["ConnectionStrings:DataContext"];
+            //services.AddDbContext<DataContext>(options => options.UseNpgsql(Configuration["ConnectionStrings:DataContext"]));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -14,9 +14,10 @@ namespace ShopSite.Components
         {
             List<FilterItems> _FilterItems = TovarMethods.GetFilterItems(null, FilterId);
             ViewBag.FilterName = FilterName;
+            ViewBag.FilterId = FilterId;
+            ViewBag.FilterAtributes = TovarMethods.GetFilterAtributes(null,FilterId);
             return View($"~/Views/Tovars/Filter/{FilterType}.cshtml", _FilterItems);
         }
-
     }
 
 }

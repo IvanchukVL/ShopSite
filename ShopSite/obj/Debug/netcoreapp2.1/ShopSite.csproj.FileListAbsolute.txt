@@ -44,4 +44,5 @@ C:\Baza\ShopSite\ShopSite\obj\Debug\netcoreapp2.1\Razor\Views\Pages\Tovars_DELET
 C:\Baza\ShopSite\ShopSite\obj\Debug\netcoreapp2.1\Razor\Views\Tovars\Filter\FilterCheckList.g.cshtml.cs
 C:\Baza\ShopSite\ShopSite\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutTovar.g.cshtml.cs
 C:\Baza\ShopSite\ShopSite\obj\Debug\netcoreapp2.1\Razor\Views\Tovars\Filter\FilterRangePrice.g.cshtml.cs
-C:\Baza\ShopSite\ShopSite\obj\Debug\netcoreapp2.1\Razor\Views\Tovars\ListTovar.g.cshtml.cs
+C:\Baza\ShopSite\ShopSite\obj\Debug\netcoreapp2.1\Razor\Views\Tovars\ReviewTovars.g.cshtml.cs
+C:\Baza\ShopSite\ShopSite\obj\Debug\netcoreapp2.1\Razor\Views\Tovars\ListTovars.g.cshtml.cs

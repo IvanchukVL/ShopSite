@@ -9,9 +9,10 @@ using BLShopSite;
 namespace ShopSite.Controllers
 {
 
-    public class RecipeInformation
+    public class Param
     {
-        public string name { get; set; }
+        public string Id { get; set; }
+        public string Value { get; set; }
     }
 
     public class TovarsController : Controller
@@ -21,20 +22,28 @@ namespace ShopSite.Controllers
             return View();
         }
 
-        public IActionResult ListTovar(int? Id, int? TovarGroupId)
+        public IActionResult ReviewTovars(int? Id, int? TovarGroupId)
         {
             ViewBag.Id = Id;
             ViewBag.TovarGroupId = TovarGroupId;
             ViewBag.ListFilter = TovarMethods.GetFiltersForTovars(null, TovarGroupId);
+            ViewBag.TovarsAll =TovarMethods.GetAll();
             return View();
         }
 
         [HttpPost]
-        public IActionResult MessageHandler([FromBody] RecipeInformation information)
+        public IActionResult ListTovars([FromBody] List<Param> Params)
         {
-            var t = Request.Body;
-            string result = "Вийшло!!!";
-            return Json(result);
+            var model = TovarMethods.GetOne();
+            return PartialView("ListTovars",model);
         }
+
+        //[HttpPost]
+        //public IActionResult MessageHandler([FromBody] RecipeInformation information)
+        //{
+        //    var t = Request.Body;
+        //    string result = "Вийшло!!!";
+        //    return Json(result);
+        //}
     }
 }
