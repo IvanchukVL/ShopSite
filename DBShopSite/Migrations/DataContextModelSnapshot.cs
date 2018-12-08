@@ -47,14 +47,14 @@ namespace DBShopSite.Migrations
                         .IsRequired()
                         .HasMaxLength(70);
 
+                    b.Property<int?>("Kind")
+                        .IsRequired()
+                        .HasMaxLength(150);
+
                     b.Property<string>("Name")
                         .HasMaxLength(150);
 
                     b.Property<int>("Status");
-
-                    b.Property<string>("TypeFilter")
-                        .IsRequired()
-                        .HasMaxLength(150);
 
                     b.HasKey("Id");
 
@@ -80,6 +80,23 @@ namespace DBShopSite.Migrations
                     b.HasIndex("FilterId");
 
                     b.ToTable("FilterItems");
+                });
+
+            modelBuilder.Entity("DBShopSite.Entities.FilterKind", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasMaxLength(70);
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(150);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FilterKinds");
                 });
 
             modelBuilder.Entity("DBShopSite.Entities.FiltersAtribute", b =>
@@ -220,6 +237,25 @@ namespace DBShopSite.Migrations
                     b.ToTable("Tovars");
                 });
 
+            modelBuilder.Entity("DBShopSite.Entities.TovarAtribute", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Code")
+                        .IsRequired();
+
+                    b.Property<int>("Kind");
+
+                    b.Property<string>("Name");
+
+                    b.Property<int>("Status");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TovarAtributes");
+                });
+
             modelBuilder.Entity("DBShopSite.Entities.TovarGroup", b =>
                 {
                     b.Property<int>("Id")
@@ -252,6 +288,33 @@ namespace DBShopSite.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("TovarGroupFilters");
+                });
+
+            modelBuilder.Entity("DBShopSite.Entities.TovarValue", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<decimal?>("Amount");
+
+                    b.Property<int>("AtributeId");
+
+                    b.Property<string>("Code")
+                        .HasMaxLength(32);
+
+                    b.Property<int?>("FilterId");
+
+                    b.Property<int?>("Flag");
+
+                    b.Property<string>("Info");
+
+                    b.Property<int>("Status");
+
+                    b.Property<int>("TovarId");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TovarValues");
                 });
 
             modelBuilder.Entity("DBShopSite.Entities.User", b =>

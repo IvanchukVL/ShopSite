@@ -1,11 +1,11 @@
 ﻿
-@using DBShopSite.Entities
-@model List<Filter>
+@using DBShopSite.Views
+@model List<vFilter>
 <form id="form1">
     @foreach (var fi in Model)
     {
         <br />
-        @await Component.InvokeAsync("cFilterItem", new { FilterId = fi.Id, FilterName = fi.Name, FilterType = fi.TypeFilter })
+        @await Component.InvokeAsync("cFilterItem", new { FilterId = fi.Id, FilterName = fi.Name, FilterKindCode = fi.KindCode })
         <br />
     }
     <input type="button" onclick="GetZap()" value="Застосувати" />
@@ -21,11 +21,11 @@
                 var params = element.id.split('_')
                 Value = null;
                 el = $('#' + $('.FilterItem')[i].id);
-               if (params[1] == 'RnPrItem') {
+                if (params[1] == 'FilterRangePrice') {
                    Value = el.val();
                    //Value = el.slider('getValue');
                 }
-                if (params[1] == 'ChItem') {
+                if (params[1] == 'FilterCheckList') {
                     Value = el.prop('checked') == true ? "1" : "0";
                 }
                 data.push(

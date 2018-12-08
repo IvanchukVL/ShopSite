@@ -10,13 +10,14 @@ namespace ShopSite.Components
 {
     public class cFilterItem : ViewComponent
     {
-        public IViewComponentResult Invoke(int? FilterId, string FilterName, string FilterType)
+        public IViewComponentResult Invoke(int? FilterId, string FilterName, string FilterKindCode)
         {
-            List<FilterItems> _FilterItems = TovarMethods.GetFilterItems(null, FilterId);
+            List<FilterItems> _FilterItems = FilterMethods.GetFilterItems(null, FilterId);
             ViewBag.FilterName = FilterName;
+            ViewBag.FilterKindCode = FilterKindCode;
             ViewBag.FilterId = FilterId;
-            ViewBag.FilterAtributes = TovarMethods.GetFilterAtributes(null,FilterId);
-            return View($"~/Views/Tovars/Filter/{FilterType}.cshtml", _FilterItems);
+            ViewBag.FilterAtributes = FilterMethods.GetFilterAtributes(null,FilterId);
+            return View($"~/Views/Tovars/Filter/{FilterKindCode}.cshtml", _FilterItems);
         }
     }
 

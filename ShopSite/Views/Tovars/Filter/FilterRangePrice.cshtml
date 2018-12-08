@@ -1,6 +1,6 @@
 ﻿@using DBShopSite.Views
 @{
-    string Id = $"fi_RnPrItem_{ViewBag.FilterId}";
+    string Id = $"fi_{ViewBag.FilterKindCode}_{ViewBag.FilterId}";
     decimal MinValue = 0, MaxValue = 0;
     string Unit = "";
     try

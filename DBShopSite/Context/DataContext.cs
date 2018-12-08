@@ -19,6 +19,10 @@ namespace DBShopSite.Context
         public DbSet<FilterItems> FilterItems { get; set; }
         public DbSet<Atribute> Atributes { get; set; }
         public DbSet<FiltersAtribute> FiltersAtributes { get; set; }
+        public DbSet<TovarAtribute> TovarAtributes { get; set; }
+        public DbSet<TovarValue> TovarValues { get; set; }
+        public DbSet<FilterKind> FilterKinds { get; set; }
+       
 
         //[DefaultValue("Host=localhost;Port=5432;Database=ShopSite;Username=postgres;Password=1")]
         public string Conn { get; set; }

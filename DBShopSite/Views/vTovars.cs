@@ -10,5 +10,9 @@ namespace DBShopSite.Views
             public string Code { get; set; }
         }
 
+    public class vFilter : Filter
+    {
+        public string KindCode { get; set; }
+    }
 
 }

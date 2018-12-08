@@ -6,7 +6,7 @@
     @foreach (var fi in Model)
     {
         <div>
-            <input type="checkbox" class="FilterItem" id=@string.Format("{0}_{1}_{2}_" + fi.Id.ToString(),"fi","ChItem",ViewBag.FilterId) name="interest[]" value=@fi.Code>
+            <input type="checkbox" class="FilterItem" id=@string.Format("{0}_{1}_{2}_{3}","fi",ViewBag.FilterKindCode,ViewBag.FilterId,fi.Id.ToString()) name="interest[]" value=@fi.Code>
             <label for=@fi.Code>@fi.Name</label>
         </div>
     }

@@ -9,11 +9,11 @@ using BLShopSite;
 namespace ShopSite.Controllers
 {
 
-    public class Param
-    {
-        public string Id { get; set; }
-        public string Value { get; set; }
-    }
+    //public class Param
+    //{
+    //    public string Id { get; set; }
+    //    public string Value { get; set; }
+    //}
 
     public class TovarsController : Controller
     {
@@ -26,15 +26,15 @@ namespace ShopSite.Controllers
         {
             ViewBag.Id = Id;
             ViewBag.TovarGroupId = TovarGroupId;
-            ViewBag.ListFilter = TovarMethods.GetFiltersForTovars(null, TovarGroupId);
-            ViewBag.TovarsAll =TovarMethods.GetAll();
+            ViewBag.ListFilter = FilterMethods.GetFiltersForTovars(null, TovarGroupId);
+            ViewBag.TovarsAll =TovarMethods.GetTovars(TovarGroupId);
             return View();
         }
 
         [HttpPost]
-        public IActionResult ListTovars([FromBody] List<Param> Params)
+        public IActionResult ListTovars([FromBody] List<FilterParam> Params)
         {
-            var model = TovarMethods.GetOne();
+            var model = TovarMethods.GetTovarsWithFiler(Params);
             return PartialView("ListTovars",model);
         }
 
