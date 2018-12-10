@@ -28,7 +28,7 @@ namespace DBShopSite.Migrations
                         .IsRequired()
                         .HasMaxLength(70);
 
-                    b.Property<int>("DataType");
+                    b.Property<int>("Kind");
 
                     b.Property<string>("Name")
                         .HasMaxLength(150);

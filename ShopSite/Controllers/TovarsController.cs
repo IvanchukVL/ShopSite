@@ -34,7 +34,14 @@ namespace ShopSite.Controllers
         [HttpPost]
         public IActionResult ListTovars([FromBody] List<FilterParam> Params)
         {
-            var model = TovarMethods.GetTovarsWithFiler(Params);
+            int? TovarGroupId=null;
+            FilterParam ItemTovarGroupId = Params.Find(x => x.Id == "TovarGroupId");
+            if (ItemTovarGroupId != null)
+            {
+                TovarGroupId = Convert.ToInt32(ItemTovarGroupId.Value);
+                Params.Remove(ItemTovarGroupId);
+            }
+            var model = TovarMethods.GetTovarsWithFiler(Params, TovarGroupId);
             return PartialView("ListTovars",model);
         }
 

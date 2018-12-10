@@ -75,5 +75,21 @@ namespace DBShopSite.Entities
         public int Status { get; set; }
     }
 
+    /// <summary>
+    /// Атрибут для товару
+    /// DataType - 1- числове значення (крапка як розділовий знак між цілою і дробовою частиною);
+    ///            2- текстове значення;
+    ///            3- дата/час;
+    /// </summary>
+    public class Atribute
+    {
+        public int Id { get; set; }
+        [Required]
+        [StringLength(70)]
+        public string Code { get; set; }
+        [StringLength(150)]
+        public string Name { get; set; }
+        public int Kind { get; set; }
+    }
 
 }

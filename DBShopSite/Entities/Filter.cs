@@ -34,22 +34,6 @@ namespace DBShopSite.Entities
         public string Name { get; set; }
     }
 
-    /// <summary>
-    /// Атрибут для фільтра
-    /// DataType - 1- числове значення (крапка як розділовий знак між цілою і дробовою частиною);
-    ///            2- текстове значення;
-    ///            3- дата/час;
-    /// </summary>
-    public class Atribute
-    {
-        public int Id { get; set; }
-        [Required]
-        [StringLength(70)]
-        public string Code { get; set; }
-        [StringLength(150)]
-        public string Name { get; set; }
-        public int DataType { get; set; }
-    }
 
     /// <summary>
     /// Звязка між фільтром і його атрибутами
@@ -82,6 +66,7 @@ namespace DBShopSite.Entities
     {
         public string Id { get; set; }
         public string Value { get; set; }
+        public string Value2 { get; set; }
     }
 
     public class FilterParamExt : FilterParam
@@ -95,6 +80,7 @@ namespace DBShopSite.Entities
             string[] Pr = Param.Id.Split('_');
             Id = Param.Id;
             Value = Param.Value;
+            Value2 = Param.Value2;
             KindCode = Pr[1];
             FilterId = Convert.ToInt32(Pr[2]);
             if (Pr.Length >= 4)
