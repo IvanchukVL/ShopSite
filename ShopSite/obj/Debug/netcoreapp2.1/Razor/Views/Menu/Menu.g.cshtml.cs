@@ -156,7 +156,7 @@ WriteAttributeValue("", 1006, Url.Action(mi.Command, mi.Controll,new { Id = mi.I
             WriteLiteral("            </ul>\r\n            ");
             EndContext();
             BeginContext(1520, 361, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "11d18b9800704fbcb8ac6723aca3b08b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ae24053eade4cd8911de0d01f21fe6c", async() => {
                 BeginContext(1573, 301, true);
                 WriteLiteral(@"
                 <div class=""form-group"">
