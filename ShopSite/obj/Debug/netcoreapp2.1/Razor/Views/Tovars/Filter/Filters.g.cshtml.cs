@@ -60,7 +60,7 @@ using DBShopSite.Views;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(49, 2244, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5ffcd0b06aa94548a47ea2767582b530", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a4ed345366dc45a880f988576c021aed", async() => {
                 BeginContext(66, 2, true);
                 WriteLiteral("\r\n");
                 EndContext();
