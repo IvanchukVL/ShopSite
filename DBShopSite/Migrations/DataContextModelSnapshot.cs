@@ -267,6 +267,8 @@ namespace DBShopSite.Migrations
                         .IsRequired()
                         .HasMaxLength(150);
 
+                    b.Property<int>("NumberColumns");
+
                     b.Property<int>("Status");
 
                     b.HasKey("Id");
@@ -288,6 +290,25 @@ namespace DBShopSite.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("TovarGroupFilters");
+                });
+
+            modelBuilder.Entity("DBShopSite.Entities.TovarPhoto", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<byte[]>("Photo")
+                        .IsRequired();
+
+                    b.Property<int>("Status");
+
+                    b.Property<int>("TovarId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TovarId");
+
+                    b.ToTable("TovarPhoto");
                 });
 
             modelBuilder.Entity("DBShopSite.Entities.TovarValue", b =>
@@ -389,6 +410,14 @@ namespace DBShopSite.Migrations
                     b.HasOne("DBShopSite.Entities.Roles")
                         .WithMany("RolesMenu")
                         .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("DBShopSite.Entities.TovarPhoto", b =>
+                {
+                    b.HasOne("DBShopSite.Entities.Tovar")
+                        .WithMany("TovarPhotos")
+                        .HasForeignKey("TovarId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

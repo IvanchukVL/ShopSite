@@ -16,7 +16,21 @@ namespace DBShopSite.Entities
         public int GroupId { get; set; }
         [Required]
         public int Status { get; set; }
+        public List<TovarPhoto> TovarPhotos { get; set; }
+
     }
+
+    public class TovarPhoto
+    {
+        public int Id { get; set; }
+        [Required]
+        public int TovarId { get; set; }
+        [Required]
+        public byte[] Photo { get; set; }
+        [Required]
+        public int Status { get; set; }
+    }
+
 
     /// <summary>
     /// Довідник атрибутів (параметрів) товару
@@ -59,6 +73,8 @@ namespace DBShopSite.Entities
         [StringLength(150)]
         public string NameGroup { get; set; }
         public int FilterId { get; set; }
+        [Required]
+        public int NumberColumns { get; set; }
         [Required]
         public int Status { get; set; }
    }

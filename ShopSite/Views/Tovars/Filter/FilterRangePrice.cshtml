@@ -5,9 +5,9 @@
     string Unit = "";
     try
     {
-        MinValue = Convert.ToDecimal(((List<vFiltersAtribute>)ViewBag.FilterAtributes).First(x => x.Code == "MinValue").Value);
-        MaxValue = Convert.ToDecimal(((List<vFiltersAtribute>)ViewBag.FilterAtributes).First(x => x.Code == "MaxValue").Value);
-        Unit = ((List<vFiltersAtribute>)ViewBag.FilterAtributes).First(x => x.Code == "Unit").Value.ToString();
+        MinValue = Convert.ToDecimal(((List<ViewFiltersAtribute>)ViewBag.FilterAtributes).First(x => x.Code == "MinValue").Value);
+        MaxValue = Convert.ToDecimal(((List<ViewFiltersAtribute>)ViewBag.FilterAtributes).First(x => x.Code == "MaxValue").Value);
+        Unit = ((List<ViewFiltersAtribute>)ViewBag.FilterAtributes).First(x => x.Code == "Unit").Value.ToString();
     }
     catch (Exception err)
     {

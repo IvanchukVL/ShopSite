@@ -5,14 +5,19 @@ using DBShopSite.Entities;
 
 namespace DBShopSite.Views
 {
-        public class vFiltersAtribute:FiltersAtribute
-        {
-            public string Code { get; set; }
-        }
+    public class ViewFiltersAtribute:FiltersAtribute
+    {
+        public string Code { get; set; }
+    }
 
-    public class vFilter : Filter
+    public class ViewFilter : Filter
     {
         public string KindCode { get; set; }
+    }
+
+    public class ViewTovar : Tovar
+    {
+        public int? Rank { get; set; }
     }
 
 }

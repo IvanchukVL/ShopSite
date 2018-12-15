@@ -1,20 +1,16 @@
 ﻿@{
     Layout = "_Layout";
 }
-@using DBShopSite.Entities
+@*@using DBShopSite.Entities*@
 @using DBShopSite.Views
 
 <div class="row">
     <div class="col-md-3 border border-top-1 border-right-1 border-bottom-1">
-        @{await Html.RenderPartialAsync(@"~/Views/Tovars/Filter/Filters.cshtml", (List<vFilter>)ViewBag.ListFilter);}
+        @{await Html.RenderPartialAsync(@"~/Views/Tovars/Filter/Filters.cshtml", (List<ViewFilter>)ViewBag.ListFilter);}
     </div>
     <div class="col-md-9">
-        РЛОРЛОРЛОРЛОРЛОРЛОРЛ111
-        @ViewBag.Id.ToString()
-
-
         <div id="dvCategoryResults">
-            @{await Html.RenderPartialAsync(@"~/Views/Tovars/ListTovars.cshtml", (List<Tovar>)ViewBag.TovarsAll);}
+            @{await Html.RenderPartialAsync(@"~/Views/Tovars/ListTovars.cshtml", (List<ViewTovar>)ViewBag.TovarsAll);}
         </div>
 
     </div>

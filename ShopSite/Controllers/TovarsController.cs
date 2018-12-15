@@ -26,6 +26,7 @@ namespace ShopSite.Controllers
         {
             ViewBag.Id = Id;
             ViewBag.TovarGroupId = TovarGroupId;
+            ViewBag.NumberColumns = TovarMethods.GetGroupInfo(TovarGroupId).NumberColumns;
             ViewBag.ListFilter = FilterMethods.GetFiltersForTovars(null, TovarGroupId);
             ViewBag.TovarsAll =TovarMethods.GetTovars(TovarGroupId);
             return View();
@@ -42,7 +43,9 @@ namespace ShopSite.Controllers
                 Params.Remove(ItemTovarGroupId);
             }
             var model = TovarMethods.GetTovarsWithFiler(Params, TovarGroupId);
-            return PartialView("ListTovars",model);
+            ViewBag.NumberColumns = TovarMethods.GetGroupInfo(TovarGroupId).NumberColumns;
+
+           return PartialView("ListTovars",model);
         }
 
         //[HttpPost]

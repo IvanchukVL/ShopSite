@@ -11,15 +11,15 @@ namespace BLShopSite
     public class FilterMethods
     {
 
-        public static List<vFilter> GetFiltersForTovars(int? UserId, int? TovarGroupId)
+        public static List<ViewFilter> GetFiltersForTovars(int? UserId, int? TovarGroupId)
         {
             using (DataContext db = new DataContext())
             {
-                IQueryable<vFilter> QFilterItems = (from f in db.Filters
+                IQueryable<ViewFilter> QFilterItems = (from f in db.Filters
                                                     join tf in db.TovarGroupFilters on f.Id equals tf.FilterId
                                                     join fk in db.FilterKinds on f.Kind equals fk.Id
                                                     where tf.TovarGroupId == TovarGroupId
-                                                    select new vFilter
+                                                    select new ViewFilter
                                                     {
                                                         Id = f.Id,
                                                         Name = f.Name,
@@ -45,14 +45,14 @@ namespace BLShopSite
             }
         }
 
-        public static List<vFiltersAtribute> GetFilterAtributes(int? UserId, int? FilterId)
+        public static List<ViewFiltersAtribute> GetFilterAtributes(int? UserId, int? FilterId)
         {
             using (DataContext db = new DataContext())
             {
-                IQueryable<vFiltersAtribute> QFilterItems = (from fa in db.FiltersAtributes
+                IQueryable<ViewFiltersAtribute> QFilterItems = (from fa in db.FiltersAtributes
                                                              join a in db.Atributes on fa.AtributeId equals a.Id
                                                              where fa.FilterId == FilterId
-                                                             select new vFiltersAtribute
+                                                             select new ViewFiltersAtribute
                                                              {
                                                                  Id = fa.Id,
                                                                  AtributeId = fa.AtributeId,

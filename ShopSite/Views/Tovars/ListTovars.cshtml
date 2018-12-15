@@ -1,14 +1,24 @@
 ﻿
-@using DBShopSite.Entities
-@model List<Tovar>
+@using DBShopSite.Views
+@model List<ViewTovar>
 
-
-<table class="table table-striped">
-    @foreach (var t in Model)
+@{
+    int? i = null;
+    int? CurRank = null;
+}
+<div class="container-fluid" style="border:double; border-color:black;">
+    @foreach (var g in Model.GroupBy(x => new { x.Rank }).Select(x => new { x.Key.Rank }))
     {
-    <tr>
-        <td>@t.Id</td>
-        <td>@t.Name</td>
-    </tr>
+        i = 1;
+        CurRank = g.Rank;
+        <div class="row">
+            @foreach (var t in Model.Where(x => x.Rank == g.Rank))
+            {
+                <div class="col-md-4" style="border:double; border-color:black; ">
+                    @{await Html.RenderPartialAsync(@"~/Views/Tovars/TovarInfo.cshtml", (ViewTovar)t);}
+                </div>
+                i++;
+            }
+        </div>
     }
-</table>
+</div>

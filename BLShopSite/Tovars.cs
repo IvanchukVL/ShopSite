@@ -9,24 +9,30 @@ using DBShopSite.Views;
 
 namespace BLShopSite
 {
-    public class TovarMethods
+    public static class TovarMethods
     {
 
 
-        public static List<Tovar> GetTovars(int? GroupId)
+        public static List<ViewTovar> GetTovars(int? GroupId)
         {
             using (DataContext db = new DataContext())
             {
+                IQueryable<Tovar> Tovars = db.Tovars
+                                                .Where(x => x.GroupId == GroupId || GroupId == null)
+                                                .OrderBy(x=>x)
+                                                .Select(x => new Tovar
+                                                {
+                                                    Id = x.Id,
+                                                    Name = x.Name,
+                                                    Status = x.Status,
+                                                    GroupId = x.GroupId
+                                                });
 
-                IQueryable<Tovar> Tovars = (from t in db.Tovars
-                                            where t.GroupId == GroupId || GroupId == null
-                                            select t
-                                           );
-                return Tovars.ToList();
+                return Tovars.ToList().RankTovars();
             }
         }
 
-        public static List<Tovar> GetTovarsWithFiler(List<FilterParam> Params, int? TovarGroupId)
+        public static List<ViewTovar> GetTovarsWithFiler(List<FilterParam> Params, int? TovarGroupId)
         {
             List<FilterParamExt> ParamsExt = Params.Select(x=>new FilterParamExt(x)).ToList();
             int FiltersCount = ParamsExt.GroupBy(x => x.FilterId).Count();
@@ -56,45 +62,46 @@ namespace BLShopSite
                                )
                          .GroupBy(x=> new { x.tv.t.Id, x.tv.t.Name, x.tv.t.Status, x.tv.t.GroupId })
                          .Where(x=>x.Count()>= FiltersCount)
-                         .Select(x => new Tovar { Id = x.Key.Id,
+                         .Select(x => new Tovar
+                                                { Id = x.Key.Id,
                                                   Name = x.Key.Name,
                                                   Status = x.Key.Status,
-                                                  GroupId = x.Key.GroupId })     
+                                                  GroupId = x.Key.GroupId
+                                                })     
                          ;
 
-                //IQueryable<Tovar> Tovars =
-                //                        (from tb in 
-                //                            (from t in db.Tovars
-                //                                join tv in db.TovarValues on t.Id equals tv.TovarId
-                //                                join ta in db.TovarAtributes on tv.AtributeId equals ta.Id
-                //                                where ParamsExt.Exists(x =>
-                //                                        x.FilterId == tv.FilterId
-                //                                      &&
-                //                                       (
-                //                                        (ta.Kind == 2 && x.FilterItemId == tv.Flag)
-                //                                        ||
-                //                                        (ta.Kind == 3 && Convert.ToDecimal(x.Value) <= tv.Amount && Convert.ToDecimal(x.Value2) >= tv.Amount)
-                //                                       )
-                //                                      &&
-                //                                        ((tv.FilterId ?? -1) != -1)
-                //                                      )
-                //                                select t
-                //                               )
-                //                         group tb by new { tb.Id, tb.Name, tb.Status, tb.GroupId }
-                //                         into g
-                //                         where g.Count() >= FiltersCount
-                //                         orderby g.Key.Id
-                //                         select new Tovar
-                //                         {
-                //                             Id = g.Key.Id,
-                //                             Name = g.Key.Name,
-                //                             Status = g.Key.Status,
-                //                             GroupId = g.Key.GroupId
-                //                         }
-                //                       );
-                return Tovars.ToList();
+                return Tovars.ToList().RankTovars();
             }
         }
+
+        public static TovarGroup GetGroupInfo(int? GroupId)
+        {
+            using (DataContext db = new DataContext())
+            {
+
+                IQueryable<TovarGroup> TovarGroups = db.TovarGroups.Where(x => x.Id == GroupId)
+                                                         .Select(x=>x);
+                return TovarGroups.First();
+            }
+        }
+
+
+        public static List<ViewTovar> RankTovars(this List<Tovar> Tovars)
+        {
+            int i = 0;
+            List<ViewTovar> list = Tovars
+                            .Select((x, index) => new ViewTovar
+                            {
+                                Id = x.Id,
+                                Name = x.Name,
+                                Status = x.Status,
+                                GroupId = x.GroupId,
+                                Rank = index % 3 == 0 ? ++i : i
+                            }).ToList();
+
+            return list.ToList();
+        }
+
 
     }
 }
