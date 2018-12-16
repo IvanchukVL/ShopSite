@@ -8,12 +8,14 @@
         @await Component.InvokeAsync("cFilterItem", new { FilterId = fi.Id, FilterName = fi.Name, FilterKindCode = fi.KindCode })
         <br />
     }
-    <input type="button" onclick="GetZap()" value="Застосувати" />
+    <input type="button" onclick="GetTovars(1)" value="Застосувати" />
     <script>
-        function GetZap() {
+        function GetTovars(NumPage) {
+            @*if (NumPage < 1 || NumPage>@ViewBag.CountPages)
+                return;*@
+
             console.log("крок0");
             var payload;
-
             var data = [];
             var Value,Value2;
             for (let i = 0; i < $('.FilterItem').length; i++) {
@@ -22,33 +24,31 @@
                 Value = null; Value2 = null;
                 el = $('#' + $('.FilterItem')[i].id);
                 if (params[1] == 'FilterRangePrice') {
-                    //alert(el.val().split(',')[0]);
                     if (el.val() == el.data('slider').options.value[0] + ',' + el.data('slider').options.value[1])
                         continue;
                     else {
                         Value = el.val().split(',')[0];
                         Value2 = el.val().split(',')[1];
                     }
-
                 }
                 if (params[1] == 'FilterCheckList') {
                     if (el.prop('checked') == true)
                         Value = 1;
                     else
                         continue;
-                    //Value = el.prop('checked') == true ? "1" : "0";
                 }
-
                 data.push(
                     { Id: element.id, Value: Value, Value2: Value2 });
             }
             //додаєм інформацію про групу товару
             data.push(
                 { Id: 'TovarGroupId', Value: @ViewBag.TovarGroupId, Value2: null });
+            data.push(
+                { Id: 'NumPage', Value: NumPage, Value2: null });
 
 
             //alert(JSON.stringify(data));
-            
+
         $.ajax({
             type: 'POST',
             url: '/Tovars/ListTovars',

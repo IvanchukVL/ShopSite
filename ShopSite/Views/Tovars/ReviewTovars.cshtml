@@ -1,7 +1,6 @@
 ﻿@{
     Layout = "_Layout";
 }
-@*@using DBShopSite.Entities*@
 @using DBShopSite.Views
 
 <div class="row">
@@ -12,6 +11,4 @@
         <div id="dvCategoryResults">
             @{await Html.RenderPartialAsync(@"~/Views/Tovars/ListTovars.cshtml", (List<ViewTovar>)ViewBag.TovarsAll);}
         </div>
-
     </div>
-</div>

@@ -269,6 +269,8 @@ namespace DBShopSite.Migrations
 
                     b.Property<int>("NumberColumns");
 
+                    b.Property<int>("NumberRows");
+
                     b.Property<int>("Status");
 
                     b.HasKey("Id");

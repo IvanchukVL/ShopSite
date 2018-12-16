@@ -3,22 +3,48 @@
 @model List<ViewTovar>
 
 @{
-    int? i = null;
     int? CurRank = null;
+    int? i = (int)12 / ViewBag.NumberColumns;
+    string iclass = "";
+    var PrevNumPage = ViewBag.NumPage - 1;
+    var NextNumPage = ViewBag.NumPage + 1;
 }
 <div class="container-fluid" style="border:double; border-color:black;">
     @foreach (var g in Model.GroupBy(x => new { x.Rank }).Select(x => new { x.Key.Rank }))
     {
-        i = 1;
         CurRank = g.Rank;
         <div class="row">
             @foreach (var t in Model.Where(x => x.Rank == g.Rank))
             {
-                <div class="col-md-4" style="border:double; border-color:black; ">
+                <div class="col-md-@i" style="border:double; border-color:black; ">
                     @{await Html.RenderPartialAsync(@"~/Views/Tovars/TovarInfo.cshtml", (ViewTovar)t);}
                 </div>
-                i++;
             }
         </div>
     }
 </div>
+@if (ViewBag.CountPages > 1)
+{
+    iclass = "page-item" + (PrevNumPage < 1 ? " disabled" : "");
+    <div class="container-fluid">
+        <ul class="pagination">
+            <li class="@iclass" onclick="GetPageTovars(@PrevNumPage)"><a class="page-link" href="#"><<</a></li>
+            @for (int j = 1; j <= ViewBag.CountPages; j++)
+            {
+                iclass = "page-item" + (j == ViewBag.NumPage ? " active" : "");
+                <li class="@iclass" onclick="GetPageTovars(@j)"><a class="page-link" href="#">@j</a></li>
+            }
+            @{iclass = "page-item" + (NextNumPage > ViewBag.CountPages ? " disabled" : "");}
+            <li class="@iclass" onclick="GetPageTovars(@NextNumPage)"><a class="page-link" href="#">>></a></li>
+        </ul>
+    </div>
+}
+
+<script>
+    function GetPageTovars(NumPage) {
+        if (NumPage < 1 || NumPage > @ViewBag.CountPages)
+            return;
+
+        GetTovars(NumPage);
+    }
+</script>

@@ -76,6 +76,8 @@ namespace DBShopSite.Entities
         [Required]
         public int NumberColumns { get; set; }
         [Required]
+        public int NumberRows { get; set; }
+        [Required]
         public int Status { get; set; }
    }
 
