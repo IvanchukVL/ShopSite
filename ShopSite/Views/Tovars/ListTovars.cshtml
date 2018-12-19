@@ -9,14 +9,14 @@
     var PrevNumPage = ViewBag.NumPage - 1;
     var NextNumPage = ViewBag.NumPage + 1;
 }
-<div class="container-fluid" style="border:double; border-color:black;">
+<div class="container-fluid" style="border:double; border-color:black;height:900px; ">
     @foreach (var g in Model.GroupBy(x => new { x.Rank }).Select(x => new { x.Key.Rank }))
     {
         CurRank = g.Rank;
         <div class="row">
             @foreach (var t in Model.Where(x => x.Rank == g.Rank))
             {
-                <div class="col-md-@i" style="border:double; border-color:black; ">
+                <div class="col-lg-@i border border-dark">
                     @{await Html.RenderPartialAsync(@"~/Views/Tovars/TovarInfo.cshtml", (ViewTovar)t);}
                 </div>
             }

@@ -1,25 +1,24 @@
 ﻿@using BLShopSite
 @model List<vMenu>
 @{
-    string Drop = "";
-    string ItemClass = "";
+    string AClass = "";
+    string LiClass = "";
 }
 
 <ul class="dropdown-menu" >
-    @foreach (var mi in Model)
-    {
-        Drop = mi.IsSubMenu == true ? "dropdown" : "";
-        ItemClass = mi.IsSubMenu == true ? "dropdown-toggle" : "";
-    <li>
-        <a href="@Url.Action(mi.Command,mi.Controll, new { Id=mi.Id, TovarGroupId = mi.TovarGroupId})" class="@ItemClass" data-toggle="@Drop">
+        @foreach (var mi in Model)
+        {
+            AClass = mi.IsSubMenu == true ? "dropdown-item dropdown-toggle" : "dropdown-item";
+            LiClass = mi.IsSubMenu == true ? "dropdown-submenu" : "";
+    <li class="@LiClass">
+        <a href="@Url.Action(mi.Command,mi.Controll, new { Id=mi.Id, TovarGroupId = mi.TovarGroupId})" class="@AClass">
             @mi.Name
-                @if (mi.IsSubMenu)
-                {
-                    <b class="caret"  style=" transform: rotate(-90deg)"></b>
-                    @await Component.InvokeAsync("cMenuItems", mi.Id)
-                }
-            </a>
+        </a>
+        @if (mi.IsSubMenu)
+        {
+            @await Component.InvokeAsync("cMenuItems", mi.Id);
+        }
     </li>
-    }
-</ul>
+        }
+    </ul>
 

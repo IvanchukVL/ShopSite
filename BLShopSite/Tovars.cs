@@ -13,15 +13,13 @@ namespace BLShopSite
     {
 
 
-        public static List<Tovar> GetTovars(int? TovarGroupId, int? NumPage)
+        public static List<Tovar> GetTovars(int? TovarGroupId, int? NumPage, out int? CountPages)
         {
             using (DataContext db = new DataContext())
             {
                 TovarGroup Group = GetTovarGroupInfo(TovarGroupId);
                 IQueryable<Tovar> Tovars = db.Tovars
                                                 .Where(x => x.GroupId == TovarGroupId || TovarGroupId == null)
-                                                .OrderBy(x=>x)
-                                                .Skip(Group.NumberColumns* Group.NumberRows* (int)(NumPage-1))
                                                 .Select(x => new Tovar
                                                 {
                                                     Id = x.Id,
@@ -30,7 +28,12 @@ namespace BLShopSite
                                                     GroupId = x.GroupId
                                                 });
 
-                return Tovars.ToList();
+                CountPages = (int)((double)(Tovars.Count() / (Group.NumberRows* Group.NumberColumns)) + 1);
+                var t = Group.NumberColumns * Group.NumberRows * (int)(NumPage - 1);
+                return Tovars
+                        .Skip(Group.NumberColumns* Group.NumberRows* (int)(NumPage-1))
+                        .Take(Group.NumberRows * Group.NumberColumns)
+                        .ToList();
             }
         }
 
@@ -40,10 +43,11 @@ namespace BLShopSite
             int FiltersCount = ParamsExt.GroupBy(x => x.FilterId).Count();
 
             if (FiltersCount == 0)
-                return GetTovars(TovarGroupId, NumPage).RankTovars(TovarGroupId, out CountPages);
+                return GetTovars(TovarGroupId, NumPage,out CountPages).RankTovars(TovarGroupId);
 
             using (DataContext db = new DataContext())
             {
+                TovarGroup Group = GetTovarGroupInfo(TovarGroupId);
                 IQueryable<Tovar> Tovars = db.Tovars.Join(db.TovarValues,
                                 t => t.Id,
                                 v => v.TovarId,
@@ -71,8 +75,11 @@ namespace BLShopSite
                                                   GroupId = x.Key.GroupId
                                                 })     
                          ;
-
-                return Tovars.ToList().RankTovars(TovarGroupId, out CountPages);
+                CountPages = (int)((double)(Tovars.Count() / (Group.NumberRows * Group.NumberColumns)) + 1);
+                return Tovars
+                        .Skip(Group.NumberColumns * Group.NumberRows * (int)(NumPage - 1))
+                        .Take(Group.NumberRows * Group.NumberColumns)
+                        .ToList().RankTovars(TovarGroupId);
             }
         }
 
@@ -88,7 +95,7 @@ namespace BLShopSite
         }
 
 
-        public static List<ViewTovar> RankTovars(this List<Tovar> Tovars, int? TovarGroupId, out int? CountPages)
+        public static List<ViewTovar> RankTovars(this List<Tovar> Tovars, int? TovarGroupId)
         {
             int i = 0;
             TovarGroup Group = GetTovarGroupInfo(TovarGroupId);
@@ -101,8 +108,6 @@ namespace BLShopSite
                                 GroupId = x.GroupId,
                                 Rank = index % Group.NumberColumns == 0 ? ++i : i
                             }).ToList();
-
-            CountPages = (int)((double)(i/Group.NumberRows)+1);
 
             return list.ToList();
         }

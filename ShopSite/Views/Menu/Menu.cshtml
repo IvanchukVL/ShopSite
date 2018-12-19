@@ -1,63 +1,55 @@
 ﻿@using BLShopSite
 @model List<vMenu>
 @{
-    string Drop = "";
+    string LiClass = "";
+    string AClass = "";
 }
 
-<div class="container-fluid">
-    <nav class="navbar navbar-inverse" role="navigation">
+<div class="container-fluid" style="padding:0px">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-            @*<a class="navbar-brand" href="#">Назва сайту</a>*@
         </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
                 @foreach (var mi in Model.Where(p => p.ParentId == 0))
                 {
-                    Drop = mi.IsSubMenu == true ? "dropdown" : "";
+                    LiClass = mi.IsSubMenu == true ? "dropdown" : "";
+                    AClass = mi.IsSubMenu == true ? "nav-link dropdown-toggle" : "nav-link";
 
-                    <li class="dropdown">
-                        <a href="@Url.Action(mi.Command, mi.Controll,new { Id = mi.Id, TovarGroupId = mi.TovarGroupId } )" data-toggle="@Drop" title="">
-                            @mi.Name
-                            @if (mi.IsSubMenu)
-                            {
-                                <span class="caret"></span>
-                            }
-                        </a>
-                        @await Component.InvokeAsync("cMenuItems", mi.Id)
+                <li class="@LiClass">
+                    <a href="@Url.Action(mi.Command, mi.Controll,new { Id = mi.Id, TovarGroupId = mi.TovarGroupId } )" class="@AClass" data-toggle="@LiClass" aria-haspopup="true" aria-expanded="false">
+                        @mi.Name
+                    </a>
+                    @await Component.InvokeAsync("cMenuItems", mi.Id)
 
-                    </li>
+                </li>
                 }
             </ul>
-            <form class="navbar-form navbar-right" role="search">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Слово для пошуку">
-                </div>
-                <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> Шукати</button>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Значення" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Шукати</button>
             </form>
         </div>
     </nav>
 </div>
 
 <script>
-    $(document).ready(function () {
-        $('.navbar a.dropdown-toggle').on('click', function (e) {
-            var $el = $(this);
-            var $parent = $(this).offsetParent(".dropdown-menu");
-            $(this).parent("li").toggleClass('open');
+    $('.dropdown-menu a.dropdown-toggle').on('click', function (e) {
+        if (!$(this).next().hasClass('show')) {
+            $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
+        }
+        var $subMenu = $(this).next(".dropdown-menu");
+        $subMenu.toggleClass('show');
 
-            if (!$parent.parent().hasClass('nav')) {
-                $el.next().css({ "top": $el[0].offsetTop, "left": $parent.outerWidth() - 4 });
-            }
 
-            $('.nav li.open').not($(this).parents("li")).removeClass("open");
-
-            return false;
+        $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function (e) {
+            $('.dropdown-submenu .show').removeClass("show");
         });
-    })
+
+
+        return false;
+    });
 </script>
